@@ -339,7 +339,7 @@ if (empty($_SESSION['login'])) {
                 </thead>
                 <?php $cari=$_GET['caribuku'];
                 if ($_SESSION['ova']=='keuangan') { $sql=mysqli_query($koneksi,"SELECT * FROM buku WHERE NoKwitansi='$cari'");} 
-                else { $sql=mysqli_query($koneksi,"SELECT * FROM buku WHERE JudulBuku LIKE '%$cari%' OR IdBuku LIKE '%$cari%'");}
+                else { $sql=mysqli_query($koneksi,"SELECT * FROM buku WHERE JudulBuku LIKE '%$cari%' OR IdBuku='$cari'");}
                 while($data=mysqli_fetch_object($sql)) {
                 ?>
                 <tr>
